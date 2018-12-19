@@ -2,9 +2,16 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name = "Sample test Suite">
-   <test name = "Sample test">
+   <test name = "Sample test1">
       <classes>
          <class name = "com.training.sanity.tests.LoginTests" />
       </classes>
    </test>
+   
+   <test name = "Sample test2">
+      <classes>
+         <class name = "com.training.sanity.tests.RETC_021_DeleteTag" />
+      </classes>
+   </test>
+      
 </suite>	

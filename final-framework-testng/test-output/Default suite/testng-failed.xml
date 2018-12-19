@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.training.regression.tests.LoginExcelTest">
+      <class name="com.training.sanity.tests.RETC_021_DeleteTag">
         <methods>
-          <include name="tearDown"/>
-          <include name="loginDBTest"/>
           <include name="setUpBeforeClass"/>
+          <include name="f"/>
           <include name="setUp"/>
+          <include name="afterTest"/>
+          <include name="tearDown"/>
+          <include name="beforeTest"/>
+          <include name="validLoginTest"/>
         </methods>
-      </class> <!-- com.training.regression.tests.LoginExcelTest -->
+      </class> <!-- com.training.sanity.tests.RETC_021_DeleteTag -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

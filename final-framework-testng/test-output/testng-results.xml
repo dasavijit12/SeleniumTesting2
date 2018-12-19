@@ -1,65 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="561" started-at="2018-12-17T19:55:39Z" finished-at="2018-12-17T19:55:40Z">
+  <suite started-at="2018-12-19T10:15:53Z" name="Sample test Suite" finished-at="2018-12-19T10:16:29Z" duration-ms="35301">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="561" started-at="2018-12-17T19:55:39Z" finished-at="2018-12-17T19:55:40Z">
-      <class name="com.training.regression.tests.LoginExcelTest">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.regression.tests.LoginExcelTest@cc285f4]" name="setUpBeforeClass" is-config="true" duration-ms="13" started-at="2018-12-18T01:25:39Z" finished-at="2018-12-18T01:25:39Z">
+    <test started-at="2018-12-19T10:15:53Z" name="Sample test1" finished-at="2018-12-19T10:16:29Z" duration-ms="35221">
+      <class name="com.training.sanity.tests.LoginTests">
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.LoginTests@385e9564]" started-at="2018-12-19T15:45:53Z" name="setUpBeforeClass" finished-at="2018-12-19T15:45:53Z" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="SKIP" signature="loginDBTest(java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.LoginExcelTest@cc285f4]" name="loginDBTest" duration-ms="0" started-at="2018-12-18T01:25:40Z" data-provider="excel-inputs" finished-at="2018-12-18T01:25:40Z">
-          <exception class="java.lang.RuntimeException">
-            <message>
-              <![CDATA[java.lang.IndexOutOfBoundsException: Index: 0, Size: 0]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:49)
-	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:115)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:509)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1308)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:1036)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1126)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.ArrayList.rangeCheck(Unknown Source)
-	at java.util.ArrayList.get(Unknown Source)
-	at com.training.dataproviders.LoginDataProviders.getExcelData(LoginDataProviders.java:45)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:55)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:45)
-	... 22 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.training.sanity.tests.LoginTests@385e9564]" started-at="2018-12-19T15:45:53Z" name="setUp" finished-at="2018-12-19T15:46:17Z" duration-ms="23525" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginDBTest -->
-      </class> <!-- com.training.regression.tests.LoginExcelTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- setUp -->
+        <test-method signature="validLoginTest()[pri:1, instance:com.training.sanity.tests.LoginTests@385e9564]" started-at="2018-12-19T15:46:17Z" name="validLoginTest" finished-at="2018-12-19T15:46:28Z" duration-ms="10635" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLoginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.training.sanity.tests.LoginTests@385e9564]" started-at="2018-12-19T15:46:28Z" name="tearDown" finished-at="2018-12-19T15:46:29Z" duration-ms="1029" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.sanity.tests.LoginTests -->
+    </test> <!-- Sample test1 -->
+    <test started-at="2018-12-19T10:16:29Z" name="Sample test2" finished-at="2018-12-19T10:16:29Z" duration-ms="0">
+    </test> <!-- Sample test2 -->
+  </suite> <!-- Sample test Suite -->
 </testng-results>
