@@ -46,9 +46,22 @@ private WebDriver driver;
 	@FindBy(id="doaction")
 	private WebElement applyBtn;
 	
+	@FindBy(id="submit")
+	private WebElement confirmDeleteBtn;
+	
+	@FindBy(xpath="//p[contains(text(),'User deleted.')]")
+	private WebElement msgAfterDeletingUser;
+	
+	@FindBy(xpath="//a[@class='page-title-action']")
+	private WebElement addNewUser;
+	
 	public void mouseOverOnUsersLink() {
 		Actions action = new Actions(driver);
 		action.moveToElement(this.usersLink).build().perform();
+	}
+	
+	public void clickOnUsersLink() {
+		this.usersLink.click(); 
 	}
 	
 	public void clickOnAllUsers() {
@@ -56,6 +69,13 @@ private WebDriver driver;
 	}
 	
 	public void userToBeSelected() {
+		List<WebElement> allUsers = this.usersTable.findElements(By.tagName("tr"));
+		//System.out.println(allTags.get(0).getText());
+		WebElement userToSelect = allUsers.get(2);
+		userToSelect.findElement(By.name("users[]")).click();
+	}
+	
+	public void userToBeDeleted() {
 		List<WebElement> allUsers = this.usersTable.findElements(By.tagName("tr"));
 		//System.out.println(allTags.get(0).getText());
 		WebElement userToSelect = allUsers.get(2);
@@ -89,6 +109,18 @@ private WebDriver driver;
 	
 	public void clickOnApplyBtn() {
 		this.applyBtn.click(); 
+	}
+	
+	public void clickOnConfirmDeleteBtn() {
+		this.confirmDeleteBtn.click(); 
+	}
+	
+	public String MsgAfterUserDelete() {
+		return this.msgAfterDeletingUser.getText();
+	}
+	
+	public void clickOnAddNewUserBtn() {
+		this.addNewUser.click(); 
 	}
 
 }

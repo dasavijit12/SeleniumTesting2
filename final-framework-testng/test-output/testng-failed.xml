@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test name="Default test(failed)">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.ChangeRoleTest">
+      <class name="com.training.sanity.tests.AddNewUserTests">
         <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="validLoginTest"/>
           <include name="setUpBeforeClass"/>
+          <include name="changeUserRole"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.ChangeRoleTest -->
+      </class> <!-- com.training.sanity.tests.AddNewUserTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

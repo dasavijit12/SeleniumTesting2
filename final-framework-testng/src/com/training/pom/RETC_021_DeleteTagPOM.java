@@ -1,4 +1,4 @@
-package com.training.sanity.tests;
+package com.training.pom;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ private WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//a[@class='wp-has-submenu wp-not-current-submenu menu-top menu-icon-post open-if-no-js menu-top-first']//div[@class='wp-menu-image dashicons-before dashicons-admin-post']")
+	@FindBy(id="menu-posts")
 	private WebElement postsLink;
 	
 	@FindBy(xpath="//a[@href='edit-tags.php?taxonomy=post_tag']")
@@ -41,9 +41,8 @@ private WebDriver driver;
 	
 	
 	
-	public void mouseOverOnPostsLink() {
-		Actions action = new Actions(driver);
-		action.moveToElement(this.postsLink).build().perform();
+	public void clickOnPostsLink() {
+		this.postsLink.click(); 
 	}
 	
 	public void clickOnTagsLink() {
@@ -53,7 +52,7 @@ private WebDriver driver;
 	public void clickOnTagToBeDeleted() {
 		List<WebElement> allTags = this.tagsTable.findElements(By.tagName("tr"));
 		System.out.println(allTags.get(0).getText());
-		WebElement firstTag = allTags.get(0);
+		WebElement firstTag = allTags.get(1);
 		firstTag.findElement(By.name("delete_tags[]")).click();
 	}
 	

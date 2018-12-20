@@ -6,28 +6,28 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
+
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.ChangeRolePOM;
 import com.training.pom.LoginPOM;
+import com.training.pom.PropertiesPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class ChangeRoleTest {
+public class PropertyFilterTests {
 
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
-	private ChangeRolePOM changerole;
+	private PropertiesPOM filterproperty;
 	private String actualResult;
-	private String expectedResult = "Changed roles.";
+	private String expectedResult = "User deleted.";
 
 	@BeforeClass
 	public void setUpBeforeClass() throws IOException {
@@ -37,12 +37,13 @@ public class ChangeRoleTest {
 		
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver);
-		changerole = new ChangeRolePOM(driver);
+		filterproperty = new PropertiesPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
 		driver.get(baseUrl);
 	}
+
 	
 	@AfterTest
 	public void tearDown() throws Exception {
@@ -52,7 +53,7 @@ public class ChangeRoleTest {
 	
 	
 	@Test(priority=1)
-	public void validLogin() throws InterruptedException{
+	public void validLoginTest() throws InterruptedException{
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
@@ -60,18 +61,18 @@ public class ChangeRoleTest {
 	}
 	
 	@Test(priority=2)
-	public void changeUserRole() throws InterruptedException{
+	public void changeUserRoleTest() throws InterruptedException{
 				
-		changerole.clickOnUsersLink();
+		System.out.println("change role");
+		filterproperty.clickOnPropertiesLink();
 		Thread.sleep(1000);
-		changerole.clickOnAllUsers();
-		changerole.userToBeSelected();
-		changerole.clickOnChangeRoleToBtn();
-		changerole.changeRoleTo();
+		filterproperty.clickOnAllPropertiesLink();
+		filterproperty.clickOnAlldatesListBox();
+		filterproperty.selectValidDate("March 2018");
+		filterproperty.clickOnFilterBtn();
+		//actualResult=filterproperty.MsgAfterUserDelete().trim();
+		
+		//Assert.assertEquals(actualResult, expectedResult);
 		screenShot.captureScreenShot();
-		changerole.clickOnChangeBtn();
-		actualResult=changerole.confirmationMsg();
-		screenShot.captureScreenShot();
-		Assert.assertEquals(actualResult, expectedResult);
 	}
 }

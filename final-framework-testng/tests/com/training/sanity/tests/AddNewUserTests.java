@@ -13,12 +13,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
+import com.training.pom.AddNewUserPOM;
 import com.training.pom.ChangeRolePOM;
 import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class ChangeRoleTest {
+public class AddNewUserTests {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -26,8 +27,10 @@ public class ChangeRoleTest {
 	private static Properties properties;
 	private ScreenShot screenShot;
 	private ChangeRolePOM changerole;
+	private AddNewUserPOM addnewuser;
 	private String actualResult;
-	private String expectedResult = "Changed roles.";
+	private String tempResult;
+	private String expectedResult = "New user created.";
 
 	@BeforeClass
 	public void setUpBeforeClass() throws IOException {
@@ -38,16 +41,17 @@ public class ChangeRoleTest {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver);
 		changerole = new ChangeRolePOM(driver);
+		addnewuser = new AddNewUserPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
 		driver.get(baseUrl);
 	}
-	
+
 	@AfterTest
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
-		driver.quit();
+		//driver.quit();
 	}
 	
 	
@@ -64,14 +68,28 @@ public class ChangeRoleTest {
 				
 		changerole.clickOnUsersLink();
 		Thread.sleep(1000);
-		changerole.clickOnAllUsers();
-		changerole.userToBeSelected();
-		changerole.clickOnChangeRoleToBtn();
-		changerole.changeRoleTo();
 		screenShot.captureScreenShot();
-		changerole.clickOnChangeBtn();
-		actualResult=changerole.confirmationMsg();
+		changerole.clickOnAddNewUserBtn();
+		addnewuser.enterUserName("manzoor");
+		addnewuser.enterEmail("manzoor@gmail.com");
+		addnewuser.enterFirstName("manzoor");
+		addnewuser.enterLastName("mehadi");
+		addnewuser.enterWebSite("www.google.com");
+		addnewuser.clickOnShowPasswordBtn();
+		Thread.sleep(1000);
+		addnewuser.clickOnCancleBtn();
+		Thread.sleep(1000);
+		addnewuser.clickOnShowPasswordBtn();
+		Thread.sleep(2000);
+		Thread.sleep(2000);
+		addnewuser.enterPassword("Manzoor@Mehadi123");
+		addnewuser.clickOnRoleListBox();
+		addnewuser.selectRole("Agent");
 		screenShot.captureScreenShot();
+		addnewuser.clickOnAddNewUserBtn();
+		tempResult=addnewuser.confirmationMsg().trim();
+		actualResult=tempResult.substring(0, 17);
 		Assert.assertEquals(actualResult, expectedResult);
+		screenShot.captureScreenShot();
 	}
 }
