@@ -3,17 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.RETC_021_DeleteTag">
+      <class name="com.training.sanity.tests.ChangeRoleTest">
         <methods>
-          <include name="setUpBeforeClass"/>
-          <include name="f"/>
           <include name="setUp"/>
-          <include name="afterTest"/>
           <include name="tearDown"/>
-          <include name="beforeTest"/>
           <include name="validLoginTest"/>
+          <include name="setUpBeforeClass"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.RETC_021_DeleteTag -->
+      </class> <!-- com.training.sanity.tests.ChangeRoleTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

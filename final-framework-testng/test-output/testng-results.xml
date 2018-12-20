@@ -2,30 +2,28 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-12-19T10:15:53Z" name="Sample test Suite" finished-at="2018-12-19T10:16:29Z" duration-ms="35301">
+  <suite started-at="2018-12-19T17:11:28Z" name="Default suite" finished-at="2018-12-19T17:13:13Z" duration-ms="104540">
     <groups>
     </groups>
-    <test started-at="2018-12-19T10:15:53Z" name="Sample test1" finished-at="2018-12-19T10:16:29Z" duration-ms="35221">
-      <class name="com.training.sanity.tests.LoginTests">
-        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.LoginTests@385e9564]" started-at="2018-12-19T15:45:53Z" name="setUpBeforeClass" finished-at="2018-12-19T15:45:53Z" duration-ms="20" status="PASS">
+    <test started-at="2018-12-19T17:11:28Z" name="Default test" finished-at="2018-12-19T17:13:13Z" duration-ms="104540">
+      <class name="com.training.sanity.tests.ChangeRoleTest">
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.ChangeRoleTest@385e9564]" started-at="2018-12-19T22:41:28Z" name="setUpBeforeClass" finished-at="2018-12-19T22:41:28Z" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.training.sanity.tests.LoginTests@385e9564]" started-at="2018-12-19T15:45:53Z" name="setUp" finished-at="2018-12-19T15:46:17Z" duration-ms="23525" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.training.sanity.tests.ChangeRoleTest@385e9564]" started-at="2018-12-19T22:41:28Z" name="setUp" finished-at="2018-12-19T22:42:08Z" duration-ms="39814" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validLoginTest()[pri:1, instance:com.training.sanity.tests.LoginTests@385e9564]" started-at="2018-12-19T15:46:17Z" name="validLoginTest" finished-at="2018-12-19T15:46:28Z" duration-ms="10635" status="PASS">
+        <test-method signature="validLoginTest()[pri:0, instance:com.training.sanity.tests.ChangeRoleTest@385e9564]" started-at="2018-12-19T22:42:08Z" name="validLoginTest" finished-at="2018-12-19T22:43:12Z" duration-ms="63702" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.training.sanity.tests.LoginTests@385e9564]" started-at="2018-12-19T15:46:28Z" name="tearDown" finished-at="2018-12-19T15:46:29Z" duration-ms="1029" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.training.sanity.tests.ChangeRoleTest@385e9564]" started-at="2018-12-19T22:43:12Z" name="tearDown" finished-at="2018-12-19T22:43:13Z" duration-ms="1004" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.LoginTests -->
-    </test> <!-- Sample test1 -->
-    <test started-at="2018-12-19T10:16:29Z" name="Sample test2" finished-at="2018-12-19T10:16:29Z" duration-ms="0">
-    </test> <!-- Sample test2 -->
-  </suite> <!-- Sample test Suite -->
+      </class> <!-- com.training.sanity.tests.ChangeRoleTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
