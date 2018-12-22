@@ -1,3 +1,8 @@
+/*Test Case ID : RETC_025
+Test Case Description : TO Verify whether application allows admin to filter 
+						properties details based on the search criteria
+*/
+
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -26,8 +31,9 @@ public class PropertyFilterTests {
 	private static Properties properties;
 	private ScreenShot screenShot;
 	private PropertiesPOM filterproperty;
+	private String tempResult;
 	private String actualResult;
-	private String expectedResult = "User deleted.";
+	private String expectedResult = "Mar";
 
 	@BeforeClass
 	public void setUpBeforeClass() throws IOException {
@@ -62,17 +68,24 @@ public class PropertyFilterTests {
 	
 	@Test(priority=2)
 	public void changeUserRoleTest() throws InterruptedException{
-				
-		System.out.println("change role");
+		
+		//Click on properties link		
 		filterproperty.clickOnPropertiesLink();
 		Thread.sleep(1000);
+		//Click on All Properties Link
 		filterproperty.clickOnAllPropertiesLink();
+		//Click on All Dates list box
 		filterproperty.clickOnAlldatesListBox();
+		//Select valid credentials in All Dates list box
 		filterproperty.selectValidDate("March 2018");
+		//Click on Filter button
 		filterproperty.clickOnFilterBtn();
-		//actualResult=filterproperty.MsgAfterUserDelete().trim();
-		
-		//Assert.assertEquals(actualResult, expectedResult);
+		//Storing the result in a temporary variable
+		tempResult=filterproperty.actualFilterData();
+		//getting the Sub String from the temporary result
+		actualResult=tempResult.substring(0, 3);
+		//System.out.println(actualResult);
+		Assert.assertEquals(actualResult, expectedResult);
 		screenShot.captureScreenShot();
 	}
 }

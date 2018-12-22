@@ -1,3 +1,8 @@
+/*
+ * Test Case ID: RETC_021
+   Test Case Name:To verify whether application allows admin to delete tag from the tag page
+*/
+
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -61,11 +66,17 @@ public class RETC_021_DeleteTagTests {
 	
 	@Test(priority=2)
 	public void deleteTagsTest() throws InterruptedException{
+		
+		//Click on Posts link
 		deletetag.clickOnPostsLink();
 		Thread.sleep(1000);
+		//Click on Tags link
 		deletetag.clickOnTagsLink();
+		//Click on the checkbox of the tag to be deleted
 		deletetag.clickOnTagToBeDeleted();
+		//Click Delete option
 		deletetag.clickDeleteActions();
+		//Click on Apply Button
 		deletetag.clickOnApplyBtn();
 		actualResult = deletetag.confirmationMsg();
 		Assert.assertEquals(actualResult, expectedResult);

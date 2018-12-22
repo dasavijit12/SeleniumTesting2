@@ -61,15 +61,23 @@ public class ChangeRoleTest {
 	
 	@Test(priority=2)
 	public void changeUserRole() throws InterruptedException{
-				
+		
+		//Click on Users Link
 		changerole.clickOnUsersLink();
 		Thread.sleep(1000);
+		//Click on All User Link
 		changerole.clickOnAllUsers();
+		//Click on the checkbox beside the user
 		changerole.userToBeSelected();
+		//Click on Change role to list box
 		changerole.clickOnChangeRoleToBtn();
+		//Select valid credentials in change role to list box
 		changerole.changeRoleTo();
+		//Take Screen Shot
 		screenShot.captureScreenShot();
+		//Click on Change button
 		changerole.clickOnChangeBtn();
+		//Get the message that displayed on page after changing the role of User
 		actualResult=changerole.confirmationMsg();
 		screenShot.captureScreenShot();
 		Assert.assertEquals(actualResult, expectedResult);

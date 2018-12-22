@@ -1,3 +1,6 @@
+/*Test Case ID : RETC_024
+Test Case Description : To Verify whether application allows admin to add new user*/
+
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -65,29 +68,47 @@ public class AddNewUserTests {
 	
 	@Test(priority=2)
 	public void changeUserRole() throws InterruptedException{
-				
+		
+		//Click on Users link
 		changerole.clickOnUsersLink();
 		Thread.sleep(1000);
+		//Take Screen shot
 		screenShot.captureScreenShot();
+		//Click on Add New link
 		changerole.clickOnAddNewUserBtn();
+		//Enter Valid credentials in Username textbox
 		addnewuser.enterUserName("manzoor");
+		//Enter Valid credentials in Email textbox --- manzoor@gmail.com
 		addnewuser.enterEmail("manzoor@gmail.com");
+		//Enter Valid credentials in First Name textbox --- manzoor
 		addnewuser.enterFirstName("manzoor");
+		//Enter Valid credentials in Last Name textbox --- mehadi
 		addnewuser.enterLastName("mehadi");
+		//Enter Valid credentials in Website textbox --- www.google.com
 		addnewuser.enterWebSite("www.google.com");
+		//Click on Show Password button
 		addnewuser.clickOnShowPasswordBtn();
 		Thread.sleep(1000);
+		//Click on Cancel button of Password field
 		addnewuser.clickOnCancleBtn();
 		Thread.sleep(1000);
+		//Again Click on Show Password button
 		addnewuser.clickOnShowPasswordBtn();
 		Thread.sleep(2000);
 		Thread.sleep(2000);
+		//Enter Valid credentials in Password textbox --- Manzoor@Mehadi123
 		addnewuser.enterPassword("Manzoor@Mehadi123");
+		//Click on Role list box
 		addnewuser.clickOnRoleListBox();
+		//Select Valid credentials in Role list box --- Agent
 		addnewuser.selectRole("Agent");
+		//Take Screen Shot
 		screenShot.captureScreenShot();
+		//Click on Add New User button
 		addnewuser.clickOnAddNewUserBtn();
+		//Storing the result in a temporary variable
 		tempResult=addnewuser.confirmationMsg().trim();
+		//getting the Sub String from the temporary result
 		actualResult=tempResult.substring(0, 17);
 		Assert.assertEquals(actualResult, expectedResult);
 		screenShot.captureScreenShot();

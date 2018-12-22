@@ -19,87 +19,109 @@ private WebDriver driver;
 		PageFactory.initElements(driver, this);
 	}
 	
+	//Finding the User name field
 	@FindBy(id="user_login")
 	private WebElement userNameField; 
 	
+	//Finding the Email field
 	@FindBy(id="email")
 	private WebElement emailField;
 	
+	//Finding the First Name field
 	@FindBy(id="first_name")
 	private WebElement firstNameField;
 	
+	//Finding the Last Name field
 	@FindBy(id="last_name")
 	private WebElement lastNameField;
 	
+	//Finding the Web site field
 	@FindBy(id="url")
 	private WebElement websiteField;
 	
+	//Finding the Show Password Button
 	@FindBy(xpath="//button[contains(text(),'Show password')]")
 	private WebElement showPasswordBtn;
 	
+	//Finding the Cancel Button of the Password field
 	@FindBy(xpath="//span[contains(text(),'Cancel')]")
 	private WebElement cancleBtn;
 	
+	//Finding the Password Text Box to enter password
 	@FindBy(id="pass1-text")
 	private WebElement passwordField;
 	
+	//Finding the Role List Box
 	@FindBy(id="role")
 	private WebElement roleListBox;
 	
+	//Finding the Add New User Button
 	@FindBy(id="createusersub")
 	private WebElement addNewUserBtn;
 	
+	//Finding the Element that contains message after creating new user
 	@FindBy(id="message")
 	private WebElement msgAfterCreatingUser;
 		
 	
-	
+	//Enter User name
 	public void enterUserName(String userName) {
 		this.userNameField.sendKeys(userName); 
 	}
 	
+	//Enter Email
 	public void enterEmail(String email) {
 		this.emailField.sendKeys(email); 
 	}
 	
+	//Enter First Name
 	public void enterFirstName(String fName) {
 		this.firstNameField.sendKeys(fName); 
 	}
 	
+	//Enter Last Name
 	public void enterLastName(String lName) {
 		this.lastNameField.sendKeys(lName); 
 	}
 	
+	//Enter Web Site
 	public void enterWebSite(String webSite) {
 		this.websiteField.sendKeys(webSite); 
 	}
 	
+	//Click on Show Password Button
 	public void clickOnShowPasswordBtn() {
 		this.showPasswordBtn.click(); 
 	}
 	
+	//Click on Cancel Button of Password field
 	public void clickOnCancleBtn() {
 		this.cancleBtn.click(); 
 	}
 	
+	//Enter Password
 	public void enterPassword(String password) {
 		this.passwordField.clear();
 		this.passwordField.sendKeys(password); 
 	}
 	
+	//Click on Role List Box
 	public void clickOnRoleListBox() {
 		this.roleListBox.click(); 
 	}
 	
+	//Select Valid credentials in Role list box
 	public void selectRole(String role) {
 		Select roles = new Select(this.roleListBox);
 		roles.selectByVisibleText(role);
 	}
 	
+	//Click on Add New User Button
 	public void clickOnAddNewUserBtn() {
 		this.addNewUserBtn.click(); 
 	}
 	
+	//Get the message from the web site after creating new user.
 	public String confirmationMsg() {
 		return this.msgAfterCreatingUser.getText();
 	}
