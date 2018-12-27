@@ -1,11 +1,13 @@
-package com.training.sanity.tests;
+package com.training.rough.tests;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -16,7 +18,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class ChangeRoleTest {
+public class VerifyAddedUserTest {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -24,8 +26,6 @@ public class ChangeRoleTest {
 	private static Properties properties;
 	private ScreenShot screenShot;
 	private ChangeRolePOM changerole;
-	private String actualResult;
-	private String expectedResult = "Changed roles.";
 
 	@BeforeClass
 	public void setUpBeforeClass() throws IOException {
@@ -50,7 +50,7 @@ public class ChangeRoleTest {
 	
 	
 	@Test(priority=1)
-	public void validLogin() throws InterruptedException{
+	public void validLoginTest() throws InterruptedException{
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
@@ -58,26 +58,39 @@ public class ChangeRoleTest {
 	}
 	
 	@Test(priority=2)
-	public void changeUserRole() throws InterruptedException{
+	public void verifyUserPresentTest() throws InterruptedException{
 		
 		//Click on Users Link
 		changerole.clickOnUsersLink();
 		Thread.sleep(1000);
 		//Click on All User Link
 		changerole.clickOnAllUsers();
-		//Click on the checkbox beside the user
-		changerole.userToBeSelected();
-		//Click on Change role to list box
-		changerole.clickOnChangeRoleToBtn();
-		//Select valid credentials in change role to list box
-		changerole.changeRoleTo();
-		//Take Screen Shot
-		screenShot.captureScreenShot();
-		//Click on Change button
-		changerole.clickOnChangeBtn();
-		//Get the message that displayed on page after changing the role of User
-		actualResult=changerole.confirmationMsg();
-		screenShot.captureScreenShot();
-		Assert.assertEquals(actualResult, expectedResult);
+		
+		WebElement baseTable = driver.findElement(By.tagName("table"));
+		List<WebElement> tableRows = baseTable.findElements(By.xpath
+				("//tbody[@id='the-list']/tr"));
+		int noOfRows = tableRows.size();
+		System.out.println(noOfRows);
+		boolean flag = false;
+		for(int i=0; i<noOfRows; i++) {
+			WebElement cellINeed = tableRows.get(i).findElement(By.xpath("//tbody[@id='the-list']/tr[" + (i+1) + "]/td[1]"));
+			String data = cellINeed.getText();
+			System.out.println(data);
+			if(data.equals("avijit")) {
+				flag = true;
+				//break;
+			}
+		}
+		
+		if(flag) {
+			System.out.println("Test case Passed.....");
+		}
+		
+		
+		WebElement cellIneed = baseTable.findElement(By.xpath
+				("//table[@class='wp-list-table widefat fixed striped users']/tbody/tr[4]/td[1]"));
+		String cellValue = cellIneed.getText();
+		System.out.println(cellValue);
+		
 	}
 }

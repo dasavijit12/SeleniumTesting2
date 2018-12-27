@@ -1,29 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-12-22T06:42:52Z" name="Default suite" finished-at="2018-12-22T06:43:37Z" duration-ms="44737">
+  <suite started-at="2018-12-27T15:21:48Z" name="Default suite" finished-at="2018-12-27T15:24:43Z" duration-ms="174064">
     <groups>
     </groups>
-    <test started-at="2018-12-22T06:42:52Z" name="Default test" finished-at="2018-12-22T06:43:37Z" duration-ms="44737">
-      <class name="com.training.sanity.tests.PropertyFilterTests">
-        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.PropertyFilterTests@3098cf3b]" started-at="2018-12-22T06:42:52Z" name="setUpBeforeClass" finished-at="2018-12-22T06:43:12Z" duration-ms="20329" status="PASS">
+    <test started-at="2018-12-27T15:21:48Z" name="Default test" finished-at="2018-12-27T15:24:43Z" duration-ms="174064">
+      <class name="com.training.rough.tests.OpenMultipleWindows">
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.training.rough.tests.OpenMultipleWindows@610f7aa]" started-at="2018-12-27T15:21:48Z" name="setUpBeforeClass" finished-at="2018-12-27T15:24:27Z" duration-ms="158462" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method signature="validLoginTest()[pri:1, instance:com.training.sanity.tests.PropertyFilterTests@3098cf3b]" started-at="2018-12-22T06:43:12Z" name="validLoginTest" finished-at="2018-12-22T06:43:23Z" duration-ms="11032" status="PASS">
+        <test-method signature="userLoginTest()[pri:1, instance:com.training.rough.tests.OpenMultipleWindows@610f7aa]" started-at="2018-12-27T15:24:27Z" name="userLoginTest" finished-at="2018-12-27T15:24:35Z" duration-ms="7994" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validLoginTest -->
-        <test-method signature="changeUserRoleTest()[pri:2, instance:com.training.sanity.tests.PropertyFilterTests@3098cf3b]" started-at="2018-12-22T06:43:23Z" name="changeUserRoleTest" finished-at="2018-12-22T06:43:35Z" duration-ms="11433" status="PASS">
+        </test-method> <!-- userLoginTest -->
+        <test-method signature="postCommentTest()[pri:2, instance:com.training.rough.tests.OpenMultipleWindows@610f7aa]" started-at="2018-12-27T15:24:35Z" name="postCommentTest" finished-at="2018-12-27T15:24:42Z" duration-ms="6563" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotVisibleException">
+            <message>
+              <![CDATA[element not visible
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T15:28:36.4Z'
+System info: host: 'AVIJDAS4', ip: '9.79.201.238', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab), userDataDir=C:\Users\IBM_AD~1\AppData\Local\Temp\scoped_dir9684_6618}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, databaseEnabled=false, handlesAlerts=true, version=71.0.3578.98, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: d8d410be56ed380437127e75e3ef774c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T15:28:36.4Z'
+System info: host: 'AVIJDAS4', ip: '9.79.201.238', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab), userDataDir=C:\Users\IBM_AD~1\AppData\Local\Temp\scoped_dir9684_6618}, takesHeapSnapshot=true, pageLoadStrategy=normal, unhandledPromptBehavior=, databaseEnabled=false, handlesAlerts=true, version=71.0.3578.98, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: d8d410be56ed380437127e75e3ef774c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at com.sun.proxy.$Proxy12.click(Unknown Source)
+at com.training.pom.BlogPOM.clickOnLogoutLink(BlogPOM.java:72)
+at com.training.rough.tests.OpenMultipleWindows.postCommentTest(OpenMultipleWindows.java:79)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotVisibleException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- changeUserRoleTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.training.sanity.tests.PropertyFilterTests@3098cf3b]" started-at="2018-12-22T06:43:35Z" name="tearDown" finished-at="2018-12-22T06:43:37Z" duration-ms="1907" status="PASS">
+        </test-method> <!-- postCommentTest -->
+        <test-method signature="verifyCommentInAdminPageTest()[pri:3, instance:com.training.rough.tests.OpenMultipleWindows@610f7aa]" started-at="2018-12-27T15:24:42Z" name="verifyCommentInAdminPageTest" finished-at="2018-12-27T15:24:42Z" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCommentInAdminPageTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.training.rough.tests.OpenMultipleWindows@610f7aa]" started-at="2018-12-27T15:24:42Z" name="tearDown" finished-at="2018-12-27T15:24:43Z" duration-ms="1000" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.PropertyFilterTests -->
+      </class> <!-- com.training.rough.tests.OpenMultipleWindows -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

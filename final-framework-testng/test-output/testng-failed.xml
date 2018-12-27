@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.AddNewUserTests">
+      <class name="com.training.rough.tests.OpenMultipleWindows">
         <methods>
           <include name="setUpBeforeClass"/>
-          <include name="changeUserRole"/>
+          <include name="postCommentTest"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.AddNewUserTests -->
+      </class> <!-- com.training.rough.tests.OpenMultipleWindows -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

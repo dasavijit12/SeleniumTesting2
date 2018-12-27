@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -24,6 +25,7 @@ public class LoginTests {
 	private LoginPOM loginPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
+	private JavascriptExecutor js;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
@@ -35,6 +37,7 @@ public class LoginTests {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
+		js = (JavascriptExecutor) driver;
 		loginPOM = new LoginPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
@@ -49,9 +52,11 @@ public class LoginTests {
 	}
 	@Test(priority=1)
 	public void validLoginTest() throws InterruptedException{
-		loginPOM.sendUserName("admin");
+		/*loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot();
+		screenShot.captureScreenShot();*/
+		
+		js.executeScript("window.scrollBy(0,1000)");
 	}
 }

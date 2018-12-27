@@ -65,8 +65,9 @@ private WebDriver driver;
 		
 	
 	//Enter User name
-	public void enterUserName(String userName) {
-		this.userNameField.sendKeys(userName); 
+	public String enterUserName(String userName) {
+		this.userNameField.sendKeys(userName);
+		return this.userNameField.getAttribute("value");
 	}
 	
 	//Enter Email

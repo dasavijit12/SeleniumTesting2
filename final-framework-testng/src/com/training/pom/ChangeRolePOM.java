@@ -27,7 +27,7 @@ private WebDriver driver;
 	@FindBy(xpath="//a[contains(text(),'All Users')]")
 	private WebElement allUsersLink;
 	
-	//Finmding the table that contains all the users
+	//Finding the table body that contains all the users
 	@FindBy(id="the-list")
 	private WebElement usersTable;
 	
@@ -146,6 +146,27 @@ private WebDriver driver;
 	//Click on Add New Button to add a new user
 	public void clickOnAddNewUserBtn() {
 		this.addNewUser.click(); 
+	}
+	
+	public boolean verifyUserIsAdded(String uname) {
+
+		List<WebElement> tableRows = this.usersTable.findElements(By.xpath("//tbody[@id='the-list']/tr"));
+		int noOfRows = tableRows.size();
+		System.out.println(noOfRows);
+		boolean flag = false;
+		for(int i=0; i<=noOfRows; i++) {
+			WebElement cellINeed = tableRows.get(i).findElement(By.xpath("//tbody[@id='the-list']/tr[" + (i+1) + "]/td[1]"));
+			String data = cellINeed.getText();
+			if(data.equals(uname)) {
+				flag = true;
+				break;
+			}
+		}
+		if(flag) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 }
