@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.rough.tests.OpenMultipleWindows">
+      <class name="com.training.sanity.tests.RETC_041_VerifyCommentTests">
         <methods>
-          <include name="setUpBeforeClass"/>
-          <include name="postCommentTest"/>
+          <include name="verifyCommentInAdminPageTest"/>
           <include name="tearDown"/>
+          <include name="setUpBeforeClass"/>
         </methods>
-      </class> <!-- com.training.rough.tests.OpenMultipleWindows -->
+      </class> <!-- com.training.sanity.tests.RETC_041_VerifyCommentTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

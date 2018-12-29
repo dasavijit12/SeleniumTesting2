@@ -154,7 +154,7 @@ private WebDriver driver;
 		int noOfRows = tableRows.size();
 		System.out.println(noOfRows);
 		boolean flag = false;
-		for(int i=0; i<=noOfRows; i++) {
+		for(int i=0; i<noOfRows; i++) {
 			WebElement cellINeed = tableRows.get(i).findElement(By.xpath("//tbody[@id='the-list']/tr[" + (i+1) + "]/td[1]"));
 			String data = cellINeed.getText();
 			if(data.equals(uname)) {

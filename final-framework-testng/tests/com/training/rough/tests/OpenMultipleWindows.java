@@ -3,6 +3,7 @@ Test Case Description : To Verify whether application allows admin to add new us
 
 package com.training.rough.tests;
 
+import java.awt.AWTException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -67,7 +68,7 @@ public class OpenMultipleWindows {
 	}
 	
 	@Test(priority=2)
-	public void postCommentTest() throws InterruptedException{
+	public void postCommentTest() throws InterruptedException, AWTException{
 		
 		userloginPOM.clickOnBlogLink();
 		/*blogPOM.clickOnReadMoreLink("plots for sale");

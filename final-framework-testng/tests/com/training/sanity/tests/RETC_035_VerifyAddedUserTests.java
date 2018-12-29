@@ -20,7 +20,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class TC_35_VerifyAddedUserTests {
+public class RETC_035_VerifyAddedUserTests {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -74,13 +74,13 @@ public class TC_35_VerifyAddedUserTests {
 		//Click on Add New link
 		changerole.clickOnAddNewUserBtn();
 		//Enter Valid credentials in Username textbox
-		String userName = addnewuser.enterUserName("manzoor");
+		String userName = addnewuser.enterUserName("avijit");
 		//Enter Valid credentials in Email textbox --- manzoor@gmail.com
-		addnewuser.enterEmail("manzoor@gmail.com");
+		addnewuser.enterEmail("avijitdemo1208@gmail.com");
 		//Enter Valid credentials in First Name textbox --- manzoor
-		addnewuser.enterFirstName("manzoor");
+		addnewuser.enterFirstName("avijit");
 		//Enter Valid credentials in Last Name textbox --- mehadi
-		addnewuser.enterLastName("mehadi");
+		addnewuser.enterLastName("das");
 		//Enter Valid credentials in Website textbox --- www.google.com
 		addnewuser.enterWebSite("www.google.com");
 		//Click on Show Password button
@@ -94,7 +94,7 @@ public class TC_35_VerifyAddedUserTests {
 		Thread.sleep(2000);
 		Thread.sleep(2000);
 		//Enter Valid credentials in Password textbox --- Manzoor@Mehadi123
-		addnewuser.enterPassword("Manzoor@Mehadi123");
+		addnewuser.enterPassword("Avijit@Das@Kolkata123");
 		//Click on Role list box
 		addnewuser.clickOnRoleListBox();
 		//Select Valid credentials in Role list box --- Agent

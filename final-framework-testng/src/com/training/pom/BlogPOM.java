@@ -1,5 +1,8 @@
 package com.training.pom;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -21,7 +24,7 @@ public class BlogPOM {
 	@FindBy(xpath="//div[@class='col-md-8']")
 	private WebElement containerDiv;
 	
-	//Finding the div that contains all the blog in that page
+	//Finding the comment box
 	@FindBy(id="comment")
 	private WebElement commentBox;
 	
@@ -37,14 +40,23 @@ public class BlogPOM {
 	@FindBy(xpath="//a[contains(text(),'Log Out')]")
 	private WebElement logoutLink;
 	
+	//Finding the Name field
+	@FindBy(id="author")
+	private WebElement nameField;
+	
+	//Finding the Email field
+	@FindBy(id="email")
+	private WebElement emailField;
+	
+	
 	//Clicking on Read More link
-	public void clickOnReadMoreLink(String blockToAddComment) {
+	public void clickOnReadMoreLink(String blogToAddComment) {
 		List<WebElement> allBlogs = this.containerDiv.findElements(By.xpath("//div[contains(@class,'post-content')]//h3"));
-		for(WebElement block : allBlogs) {
-			String myBlockText = block.getText().trim();
-			System.out.println(myBlockText);
-			WebElement readMore = block.findElement(By.xpath("//div[contains(@class,'post-content')]//h3//following-sibling::a"));
-			if(blockToAddComment.equals(myBlockText)) {
+		for(WebElement blog : allBlogs) {
+			String myBlogText = blog.getText().trim();
+			System.out.println("Blog Title is : " + myBlogText);
+			WebElement readMore = blog.findElement(By.xpath("//div[contains(@class,'post-content')]//h3//following-sibling::a"));
+			if(blogToAddComment.equals(myBlogText)) {
 				readMore.click();
 				break;
 			}
@@ -62,13 +74,32 @@ public class BlogPOM {
 	}
 	
 	//Click on the down arrow that is in ::after pseudo element
-		public void clickOnDownArrow() {
-			Actions action = new Actions(driver);
-			action.moveToElement(this.downArrow).moveByOffset(124, 0).click().build().perform();
-		}
+	public void clickOnDownArrow() throws AWTException {
+		Actions action = new Actions(driver);
+		action.moveToElement(this.downArrow).moveByOffset(124, 0).click().build().perform();
+	}
 		
 	//Click on the Log Out Link
-		public void clickOnLogoutLink() {
-			this.logoutLink.click();
-		}
+	public void clickOnLogoutLink() {
+		this.logoutLink.click();
+	}
+	
+	//Enter the Name of Author
+	public void enterName(String nameOfAuthor) {
+		this.nameField.clear();
+		this.nameField.sendKeys(nameOfAuthor);
+	}
+	
+	//Enter the Email of Author
+	public void enterEmail(String emailOfAuthor) {
+		this.emailField.clear();
+		this.emailField.sendKeys(emailOfAuthor);
+	}
 }
+
+
+
+
+
+
+

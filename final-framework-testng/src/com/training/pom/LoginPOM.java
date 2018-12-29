@@ -1,5 +1,6 @@
 package com.training.pom;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -30,6 +31,8 @@ public class LoginPOM {
 	private WebElement logoutLink;
 	
 	public void sendUserName(String userName) {
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		je.executeScript("window.scrollBy(0,1000)");
 		this.userName.clear();
 		this.userName.sendKeys(userName);
 	}

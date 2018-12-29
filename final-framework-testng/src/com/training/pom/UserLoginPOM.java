@@ -46,6 +46,11 @@ public class UserLoginPOM {
 	@FindBy(xpath="//div[@id='backtotop']//a[@href='#']")
 	private WebElement backToTop;
 	
+	//Finding the down arrow using css
+	@FindBy(css="div.user-name")
+	private WebElement findDownArrow;
+	
+	
 	//Click on the Log In/Register Link
 	public void clickOnLoginLink() {
 		this.loginLink.click();
@@ -70,8 +75,9 @@ public class UserLoginPOM {
 	
 	//Click on the down arrow that is in ::after pseudo element
 	public void clickOnDownArrow() {
-		Actions action = new Actions(driver);
-		action.moveToElement(this.downArrow).moveByOffset(165, 0).click().build().perform();
+		/*Actions action = new Actions(driver);
+		action.moveToElement(this.downArrow).moveByOffset(1158, 78).click().build().perform();*/
+		this.findDownArrow.click();
 	}
 	
 	//Click on the Log Out Link

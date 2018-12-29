@@ -39,6 +39,19 @@ private WebDriver driver;
 	@FindBy(id="the-list")
 	private WebElement filterTable;
 	
+	//Finding the Add New Button
+	@FindBy(xpath="//a[@class='page-title-action']")
+	private WebElement addNewBtn;
+	
+	//Finding the Trash Link
+	@FindBy(xpath="//a[@href='edit.php?post_status=trash&post_type=property']")
+	private WebElement trashLink;
+	
+	//Finding the table body that contains all the properties
+	@FindBy(id="the-list")
+	private WebElement usersTable;
+	
+	
 	
 	//Click on properties link
 	public void clickOnPropertiesLink() {
@@ -74,6 +87,57 @@ private WebDriver driver;
 		WebElement tableData = userToSelect.findElement(By.xpath("//td[@class='property_posted column-property_posted']"));
 		//System.out.println(tableData.getText());
 		return tableData.getText();
+	}
+	
+	//Click on Add New Button to add new property
+	public void clickOnAddNewBtn() {
+		this.addNewBtn.click(); 
+	}
+	
+	//Click on Add New Button to add new property
+	public void clickOnTrashLink() {
+		this.trashLink.click(); 
+	}
+	
+	//Click on Restore Link after hovering mouse on a certain property
+	public void clickOnRestoreLink(String pName) {
+
+		List<WebElement> propertyRows = this.usersTable.findElements(By.xpath("//tbody[@id='the-list']/tr"));
+		int noOfRows = propertyRows.size();
+		System.out.println(noOfRows);
+		boolean flag = false;
+		for(int i=0; i<noOfRows; i++) {
+			WebElement cellINeed = propertyRows.get(i).findElement(By.xpath("//tbody[@id='the-list']/tr[" + (i+1) + "]/td[1]"));
+			String myProperty = cellINeed.getText();
+			if(myProperty.equals(pName)) {
+				Actions action = new Actions(driver);
+				action.moveToElement(cellINeed).build().perform();
+				cellINeed.findElement(By.linkText("Restore")).click();;
+				break;
+			}
+		}
+	}
+	
+	//
+	public boolean isPropertyRestored(String RestoredPName) {
+
+		List<WebElement> propertyRows = this.usersTable.findElements(By.xpath("//tbody[@id='the-list']/tr"));
+		int noOfRows = propertyRows.size();
+		System.out.println(noOfRows);
+		boolean flag = false;
+		for(int i=0; i<noOfRows; i++) {
+			WebElement cellINeed = propertyRows.get(i).findElement(By.xpath("//tbody[@id='the-list']/tr[" + (i+1) + "]/td[1]"));
+			String myProperty = cellINeed.getText();
+			if(myProperty.equals(RestoredPName)) {
+				flag = true;
+				break;
+			}
+		}
+		if(flag) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 }
