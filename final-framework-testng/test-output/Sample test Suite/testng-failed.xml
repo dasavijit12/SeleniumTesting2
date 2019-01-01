@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Sample test Suite]" guice-stage="DEVELOPMENT">
-  <test name="Sample test2(failed)">
+<suite parallel="tests" name="Failed suite [Sample test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="Sample test2(failed)">
+    <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.training.sanity.tests.RETC_021_DeleteTag">
+      <class name="com.training.sanity.tests.ChangeRoleTest">
         <methods>
-          <include name="f"/>
-          <include name="afterTest"/>
-          <include name="beforeTest"/>
+          <include name="tearDown"/>
+          <include name="changeUserRole"/>
+          <include name="setUpBeforeClass"/>
+          <include name="validLogin"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.RETC_021_DeleteTag -->
+      </class> <!-- com.training.sanity.tests.ChangeRoleTest -->
     </classes>
   </test> <!-- Sample test2(failed) -->
 </suite> <!-- Failed suite [Sample test Suite] -->

@@ -1,6 +1,6 @@
-/*Test Case ID : RETC_025
-Test Case Description : TO Verify whether application allows admin to filter 
-						properties details based on the search criteria
+/*Test Case ID : RETC_053
+Test Case Description : To verify whether application displays property details home screen 
+						upon clicking Restore link of selected property details in trash
 */
 
 package com.training.sanity.tests;
@@ -20,7 +20,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.AddPropertyPOM;
 import com.training.pom.HomePagePOM;
 import com.training.pom.LoginPOM;
 import com.training.pom.PropertiesPOM;
@@ -61,8 +60,7 @@ public class RETC_053_RestoreFromTrashTests {
 	
 	@AfterTest
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
-		//driver.quit();
+		driver.quit();
 	}
 	
 	

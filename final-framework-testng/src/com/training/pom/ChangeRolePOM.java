@@ -10,13 +10,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.trianing.waits.WaitTypes;
+
 public class ChangeRolePOM {
 	
-private WebDriver driver; 
+private WebDriver driver;
+private WaitTypes wt;
 	
 	public ChangeRolePOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
+		wt = new WaitTypes(driver);
 	}
 	
 	//Finding the Users Link
@@ -145,7 +149,8 @@ private WebDriver driver;
 	
 	//Click on Add New Button to add a new user
 	public void clickOnAddNewUserBtn() {
-		this.addNewUser.click(); 
+		wt.elementToBeClickable1(this.addNewUser, 20).click();
+		//this.addNewUser.click(); 
 	}
 	
 	public boolean verifyUserIsAdded(String uname) {

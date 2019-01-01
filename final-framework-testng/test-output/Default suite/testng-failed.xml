@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.RETC_041_VerifyCommentTests">
+      <class name="com.training.sanity.tests.RETC_047_AddNewFeatureTests">
         <methods>
-          <include name="verifyCommentInAdminPageTest"/>
-          <include name="tearDown"/>
           <include name="setUpBeforeClass"/>
+          <include name="changeUserRoleTest"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.RETC_041_VerifyCommentTests -->
+      </class> <!-- com.training.sanity.tests.RETC_047_AddNewFeatureTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -93,6 +93,52 @@ public class WaitTypes {
 		}
 		return null;
 	}
+	
+	
+	public WebElement elementToBeClickable1(WebElement element, int timeout){
+		try{
+			WebDriverWait wait = new WebDriverWait(driver, timeout);
+			WebElement element1  = wait.until(
+					ExpectedConditions.elementToBeClickable(element)
+					);
+			System.out.println("Element Located");
+			
+			return element1;
+		}catch(Exception e ){
+			System.out.println("Element Not Located " + e);
+		}
+		return null;
+	}
+	
+	
+	
+	public WebElement presenceElementLocated1(WebElement element, int timeout){
+		try{
+			WebDriverWait wait = new WebDriverWait(driver, timeout);
+			WebElement element1  = wait.until(
+					ExpectedConditions.visibilityOf(element));
+			System.out.println("Element Located");
+			return element1;
+		}catch(Exception e ){
+			System.out.println("Element Not Located " + e);
+		}
+		return null;
+	}
+	
+	
+	/*public WebElement presenceOfAlert(int timeout){
+		try{
+			WebDriverWait wait = new WebDriverWait(driver, timeout);
+			wait.until(
+					ExpectedConditions.alertIsPresent());
+			System.out.println("Element Located");
+			
+		}catch(Exception e ){
+			System.out.println("Element Not Located " + e);
+		}
+		return null;
+	}*/
+	
 }
 
 

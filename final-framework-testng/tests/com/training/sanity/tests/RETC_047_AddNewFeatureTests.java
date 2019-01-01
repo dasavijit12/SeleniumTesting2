@@ -1,6 +1,6 @@
-/*Test Case ID : RETC_025
-Test Case Description : TO Verify whether application allows admin to filter 
-						properties details based on the search criteria
+/*Test Case ID : RETC_047
+Test Case Description : To verify whether application allows admin to add 
+						new Feature while adding new property
 */
 
 package com.training.sanity.tests;
@@ -56,7 +56,6 @@ public class RETC_047_AddNewFeatureTests {
 	
 	@AfterTest
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
 		driver.quit();
 	}
 	

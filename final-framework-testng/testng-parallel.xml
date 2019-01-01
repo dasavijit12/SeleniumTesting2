@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Sample test Suite" parallel="tests">
+   <test name = "Sample test1">
+      <classes>
+         <class name = "com.training.sanity.tests.LoginTests" />
+         <class name = "com.training.sanity.tests.PropertyFilterTests" />
+      </classes>
+   </test>
+   
+   <test name = "Sample test2">
+   <parameter name="browser" value="firefox"></parameter>
+      <classes>
+         <class name = "com.training.sanity.tests.ChangeRoleTest" />
+      </classes>
+   </test>  
+</suite>

@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 
 /**
@@ -25,6 +26,9 @@ public class DriverFactory {
 			
 		}else if(driverName.equals(DriverNames.FIREFOX)){
 			System.setProperty(Driver.FIREFOX, Driver.FIREFOX_PATH);
+			DesiredCapabilities cap = DesiredCapabilities.firefox();
+			cap.setCapability("marionette", true);
+			cap.setBrowserName("firefox");
 			driver = new FirefoxDriver();
 			
 		}else if(driverName.equals("IE")){

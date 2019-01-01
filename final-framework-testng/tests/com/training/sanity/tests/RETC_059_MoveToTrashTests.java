@@ -1,6 +1,6 @@
-/*Test Case ID : RETC_025
-Test Case Description : TO Verify whether application allows admin to filter 
-						properties details based on the search criteria
+/*Test Case ID : RETC_059
+Test Case Description : To verify whether application allows admin to add 
+						property details into trash & display the same
 */
 
 package com.training.sanity.tests;
@@ -37,6 +37,7 @@ public class RETC_059_MoveToTrashTests {
 	private JavascriptExecutor je;
 	private boolean actualResult;
 	private boolean expectedResult = true;
+	private String propertyTitle = "Brigade1";
 
 	@BeforeClass
 	public void setUpBeforeClass() throws IOException {
@@ -58,8 +59,7 @@ public class RETC_059_MoveToTrashTests {
 	
 	@AfterTest
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
-		//driver.quit();
+		driver.quit();
 	}
 	
 	
@@ -79,9 +79,9 @@ public class RETC_059_MoveToTrashTests {
 		//Click on Add New Button
 		propertiesPOM.clickOnAddNewBtn();
 		//Enter valid credentials in Enter Title Here textbox
-		addpropertyPOM.enterTitle("Brigade");
+		addpropertyPOM.enterTitle(propertyTitle);
 		//Enter valid credentials in textbox
-		addpropertyPOM.enterTextOnTextBox("Gateway");
+		addpropertyPOM.enterTextOnTextBox("Gateway1");
 		//Click on checkbox beside created feature
 		addpropertyPOM.selectCreatedFeature("best1");
 		//Scrolling down
@@ -90,16 +90,14 @@ public class RETC_059_MoveToTrashTests {
 		addpropertyPOM.selectCreatedRegion("North Bangalore");
 		//Scrolling up again
 		je.executeScript("window.scrollBy(0,-400)");
-		Thread.sleep(3000);
 		//Click on Move to Trash Link
 		addpropertyPOM.clickOnMoveToTrashLink();
-		Thread.sleep(2000);
 		//Accepting the alert
 		addpropertyPOM.acceptAlert();
 		//Click on Trash Link
 		propertiesPOM.clickOnTrashLink();
 		//Fetching the actual result ---- Whether the property is getting displayed in Trash
-		actualResult = propertiesPOM.isPropertyRestored("Brigade");
+		actualResult = propertiesPOM.isPropertyRestored(propertyTitle);
 		screenShot.captureScreenShot();
 		Assert.assertEquals(actualResult, expectedResult);
 	}

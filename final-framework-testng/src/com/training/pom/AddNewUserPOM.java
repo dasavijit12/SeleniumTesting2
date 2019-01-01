@@ -10,13 +10,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.trianing.waits.WaitTypes;
+
 public class AddNewUserPOM {
 	
-private WebDriver driver; 
+private WebDriver driver;
+private WaitTypes wt;
 	
 	public AddNewUserPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
+		wt = new WaitTypes(driver);
 	}
 	
 	//Finding the User name field
@@ -102,8 +106,9 @@ private WebDriver driver;
 	
 	//Enter Password
 	public void enterPassword(String password) {
-		this.passwordField.clear();
-		this.passwordField.sendKeys(password); 
+		WebElement afterWait = wt.presenceElementLocated1(this.passwordField, 20);
+		afterWait.clear();
+		afterWait.sendKeys(password); 
 	}
 	
 	//Click on Role List Box

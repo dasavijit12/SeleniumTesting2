@@ -11,13 +11,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.trianing.waits.WaitTypes;
+
 public class AddPropertyPOM {
 	
-private WebDriver driver; 
+private WebDriver driver;
+private WaitTypes wt;
 	
 	public AddPropertyPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
+		wt = new WaitTypes(driver);
 	}
 	
 	//Finding the Add New Feature Link
@@ -131,7 +135,8 @@ private WebDriver driver;
 	
 	//Click on Publish button
 	public void clickOnPublishBtn() {
-		this.publishBtn.click();
+		wt.elementToBeClickable1(this.publishBtn, 20).click();
+		//this.publishBtn.click();
 	}
 	
 	//Click on Publish button
@@ -141,7 +146,7 @@ private WebDriver driver;
 	
 	//Click on Move to Trash Link
 	public void clickOnMoveToTrashLink() {
-		this.moveToTrashLink.click();
+		wt.elementToBeClickable1(this.moveToTrashLink, 20).click();
 	}
 	
 	//

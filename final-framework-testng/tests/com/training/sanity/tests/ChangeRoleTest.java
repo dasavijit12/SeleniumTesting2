@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
@@ -28,12 +29,15 @@ public class ChangeRoleTest {
 	private String expectedResult = "Changed roles.";
 
 	@BeforeClass
-	public void setUpBeforeClass() throws IOException {
+	@Parameters({"browser"})
+	public void setUpBeforeClass(String browser) throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
 		
-		driver = DriverFactory.getDriver(DriverNames.CHROME);
+		if(browser.equals("firefox")) {
+		driver = DriverFactory.getDriver(DriverNames.FIREFOX);
+		}
 		loginPOM = new LoginPOM(driver);
 		changerole = new ChangeRolePOM(driver);
 		baseUrl = properties.getProperty("baseURL");

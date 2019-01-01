@@ -3,7 +3,6 @@ Test Case Description : To verify whether application display comments added by 
 
 package com.training.sanity.tests;
 
-import java.awt.AWTException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,7 +20,6 @@ import com.training.pom.BlogPOM;
 import com.training.pom.CommentsPOM;
 import com.training.pom.HomePagePOM;
 import com.training.pom.LoginPOM;
-import com.training.pom.UserLoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
@@ -32,7 +30,6 @@ public class RETC_041_VerifyCommentTests {
 	private String baseURL;
 	private LoginPOM loginPOM;
 	private HomePagePOM homepagePOM;
-	private UserLoginPOM userloginPOM;
 	private CommentsPOM commentsPOM;
 	private BlogPOM blogPOM;
 	private static Properties properties;
@@ -50,7 +47,6 @@ public class RETC_041_VerifyCommentTests {
 		
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver);
-		userloginPOM = new UserLoginPOM(driver);
 		blogPOM = new BlogPOM(driver);
 		homepagePOM = new HomePagePOM(driver);
 		commentsPOM = new CommentsPOM(driver);
@@ -63,7 +59,6 @@ public class RETC_041_VerifyCommentTests {
 
 	@AfterTest
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
 		driver.quit();
 	}
 	
@@ -80,7 +75,7 @@ public class RETC_041_VerifyCommentTests {
 		//Enter name of the Author
 		blogPOM.enterName("Avi");
 		//Enter the Email of the Author
-		blogPOM.enterEmail("demoavimail1@gmail.com");
+		blogPOM.enterEmail("demoavimail2@gmail.com");
 		//Click on the Post Comment Button
 		blogPOM.clickOnPostBtn();
 		//Take Screen shot

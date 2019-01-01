@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-12-29T10:45:40Z" name="Default suite" finished-at="2018-12-29T10:46:44Z" duration-ms="64463">
+  <suite started-at="2019-01-01T10:01:05Z" name="Default suite" finished-at="2019-01-01T10:01:52Z" duration-ms="46532">
     <groups>
     </groups>
-    <test started-at="2018-12-29T10:45:40Z" name="Default test" finished-at="2018-12-29T10:46:44Z" duration-ms="64463">
-      <class name="com.training.sanity.tests.RETC_041_VerifyCommentTests">
-        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RETC_041_VerifyCommentTests@3098cf3b]" started-at="2018-12-29T10:45:40Z" name="setUpBeforeClass" finished-at="2018-12-29T10:46:15Z" duration-ms="35587" status="PASS">
+    <test started-at="2019-01-01T10:01:05Z" name="Default test" finished-at="2019-01-01T10:01:52Z" duration-ms="46532">
+      <class name="com.training.sanity.tests.RETC_035_VerifyAddedUserTests">
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RETC_035_VerifyAddedUserTests@3098cf3b]" started-at="2019-01-01T10:01:05Z" name="setUpBeforeClass" finished-at="2019-01-01T10:01:26Z" duration-ms="20392" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method signature="userLoginTest()[pri:1, instance:com.training.sanity.tests.RETC_041_VerifyCommentTests@3098cf3b]" started-at="2018-12-29T10:46:15Z" name="userLoginTest" finished-at="2018-12-29T10:46:24Z" duration-ms="8608" status="PASS">
+        <test-method signature="validLogin()[pri:1, instance:com.training.sanity.tests.RETC_035_VerifyAddedUserTests@3098cf3b]" started-at="2019-01-01T10:01:26Z" name="validLogin" finished-at="2019-01-01T10:01:36Z" duration-ms="10900" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userLoginTest -->
-        <test-method signature="verifyCommentInAdminPageTest()[pri:2, instance:com.training.sanity.tests.RETC_041_VerifyCommentTests@3098cf3b]" started-at="2018-12-29T10:46:24Z" name="verifyCommentInAdminPageTest" finished-at="2018-12-29T10:46:42Z" duration-ms="18297" status="PASS">
+        </test-method> <!-- validLogin -->
+        <test-method signature="changeUserRole()[pri:2, instance:com.training.sanity.tests.RETC_035_VerifyAddedUserTests@3098cf3b]" started-at="2019-01-01T10:01:36Z" name="changeUserRole" finished-at="2019-01-01T10:01:51Z" duration-ms="14210" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCommentInAdminPageTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RETC_041_VerifyCommentTests@3098cf3b]" started-at="2018-12-29T10:46:42Z" name="tearDown" finished-at="2018-12-29T10:46:44Z" duration-ms="1938" status="PASS">
+        </test-method> <!-- changeUserRole -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RETC_035_VerifyAddedUserTests@3098cf3b]" started-at="2019-01-01T10:01:51Z" name="tearDown" finished-at="2019-01-01T10:01:52Z" duration-ms="1000" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.RETC_041_VerifyCommentTests -->
+      </class> <!-- com.training.sanity.tests.RETC_035_VerifyAddedUserTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
