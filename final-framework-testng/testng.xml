@@ -4,8 +4,13 @@
 <suite name = "Sample test Suite">
    <test name = "Sample test1">
       <classes>
-         <class name = "com.training.sanity.tests.LoginTests" />
-         <class name = "com.training.sanity.tests.PropertyFilterTests" />
+         <class name = "com.training.sanity.tests.RETC_022_ChangeRoleTest" />
+      </classes>
+   </test>
+   
+   <test name = "Sample test2">
+      <classes>
+         <class name = "com.training.sanity.tests.RETC_025_PropertyFilterTests" />
       </classes>
    </test>
 </suite>

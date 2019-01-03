@@ -101,11 +101,11 @@ public class WaitTypes {
 			WebElement element1  = wait.until(
 					ExpectedConditions.elementToBeClickable(element)
 					);
-			System.out.println("Element Located");
+			System.out.println("Element is clickable now.");
 			
 			return element1;
 		}catch(Exception e ){
-			System.out.println("Element Not Located " + e);
+			System.out.println("Element Not clickable " + e);
 		}
 		return null;
 	}

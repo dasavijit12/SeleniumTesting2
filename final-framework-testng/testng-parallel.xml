@@ -10,7 +10,6 @@
    </test>
    
    <test name = "Sample test2">
-   <parameter name="browser" value="firefox"></parameter>
       <classes>
          <class name = "com.training.sanity.tests.ChangeRoleTest" />
       </classes>

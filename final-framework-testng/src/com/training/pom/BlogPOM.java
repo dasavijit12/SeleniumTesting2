@@ -1,8 +1,5 @@
 package com.training.pom;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -74,7 +71,7 @@ public class BlogPOM {
 	}
 	
 	//Click on the down arrow that is in ::after pseudo element
-	public void clickOnDownArrow() throws AWTException {
+	public void clickOnDownArrow() {
 		Actions action = new Actions(driver);
 		action.moveToElement(this.downArrow).moveByOffset(124, 0).click().build().perform();
 	}

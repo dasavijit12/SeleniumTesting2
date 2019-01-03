@@ -9,11 +9,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RETC_021_DeleteTagPOM {
+public class TagsPOM {
 	
 private WebDriver driver; 
 	
-	public RETC_021_DeleteTagPOM(WebDriver driver) {
+	public TagsPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}

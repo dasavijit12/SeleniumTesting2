@@ -9,10 +9,8 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
@@ -22,7 +20,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class AddNewUserTests {
+public class RETC_024_AddNewUserTests {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -53,8 +51,7 @@ public class AddNewUserTests {
 
 	@AfterTest
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
-		//driver.quit();
+		driver.quit();
 	}
 	
 	
@@ -71,7 +68,6 @@ public class AddNewUserTests {
 		
 		//Click on Users link
 		changerole.clickOnUsersLink();
-		Thread.sleep(1000);
 		//Take Screen shot
 		screenShot.captureScreenShot();
 		//Click on Add New link
@@ -88,14 +84,10 @@ public class AddNewUserTests {
 		addnewuser.enterWebSite("www.google.com");
 		//Click on Show Password button
 		addnewuser.clickOnShowPasswordBtn();
-		Thread.sleep(1000);
 		//Click on Cancel button of Password field
 		addnewuser.clickOnCancleBtn();
-		Thread.sleep(1000);
 		//Again Click on Show Password button
 		addnewuser.clickOnShowPasswordBtn();
-		Thread.sleep(2000);
-		Thread.sleep(2000);
 		//Enter Valid credentials in Password textbox --- Manzoor@Mehadi123
 		addnewuser.enterPassword("Manzoor@Mehadi123");
 		//Click on Role list box

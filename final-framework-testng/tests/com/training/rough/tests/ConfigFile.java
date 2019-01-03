@@ -1,4 +1,4 @@
-package com.training.sanity.tests;
+package com.training.rough.tests;
 
 import org.testng.annotations.BeforeSuite;
 

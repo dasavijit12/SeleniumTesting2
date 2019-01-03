@@ -1,5 +1,5 @@
 /*
- * Test Case ID: RETC_021
+   Test Case ID: RETC_021
    Test Case Name:To verify whether application allows admin to delete tag from the tag page
 */
 
@@ -11,15 +11,13 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.ChangeRolePOM;
 import com.training.pom.LoginPOM;
-import com.training.pom.RETC_021_DeleteTagPOM;
+import com.training.pom.TagsPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
@@ -30,7 +28,7 @@ public class RETC_021_DeleteTagTests {
 	private LoginPOM loginPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
-	private RETC_021_DeleteTagPOM deletetag;
+	private TagsPOM deletetag;
 	private String actualResult;
 	private String expectedResult = "Tags deleted.";
 
@@ -42,19 +40,17 @@ public class RETC_021_DeleteTagTests {
 		
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver);
-		deletetag = new RETC_021_DeleteTagPOM(driver);
+		deletetag = new TagsPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
 		driver.get(baseUrl);
 	}
 	
-	@AfterMethod
+	@AfterTest
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
-		//driver.quit();
+		driver.quit();
 	}
-	
 	
 	@Test(priority=1)
 	public void validLoginTest() throws InterruptedException{
@@ -69,7 +65,6 @@ public class RETC_021_DeleteTagTests {
 		
 		//Click on Posts link
 		deletetag.clickOnPostsLink();
-		Thread.sleep(1000);
 		//Click on Tags link
 		deletetag.clickOnTagsLink();
 		//Click on the checkbox of the tag to be deleted

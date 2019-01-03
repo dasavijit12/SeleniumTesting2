@@ -89,7 +89,7 @@ public class RETC_047_AddNewFeatureTests {
 		addpropertyPOM.enterTextOnTextBox("home town");
 		//Click on checkbox beside created feature
 		addpropertyPOM.selectCreatedFeature("best4");
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		//Click on Publish button
 		addpropertyPOM.clickOnPublishBtn();
 		//Storing the publish message temporarily

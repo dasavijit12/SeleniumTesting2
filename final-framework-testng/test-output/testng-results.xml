@@ -1,29 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-01-01T10:01:05Z" name="Default suite" finished-at="2019-01-01T10:01:52Z" duration-ms="46532">
+  <suite started-at="2019-01-03T16:04:34Z" name="Sample test Suite" finished-at="2019-01-03T16:06:02Z" duration-ms="88153">
     <groups>
     </groups>
-    <test started-at="2019-01-01T10:01:05Z" name="Default test" finished-at="2019-01-01T10:01:52Z" duration-ms="46532">
-      <class name="com.training.sanity.tests.RETC_035_VerifyAddedUserTests">
-        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RETC_035_VerifyAddedUserTests@3098cf3b]" started-at="2019-01-01T10:01:05Z" name="setUpBeforeClass" finished-at="2019-01-01T10:01:26Z" duration-ms="20392" status="PASS">
+    <test started-at="2019-01-03T16:04:34Z" name="Sample test1" finished-at="2019-01-03T16:05:15Z" duration-ms="40489">
+      <class name="com.training.sanity.tests.RETC_022_ChangeRoleTest">
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RETC_022_ChangeRoleTest@3098cf3b]" started-at="2019-01-03T16:04:34Z" name="setUpBeforeClass" finished-at="2019-01-03T16:04:57Z" duration-ms="23243" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method signature="validLogin()[pri:1, instance:com.training.sanity.tests.RETC_035_VerifyAddedUserTests@3098cf3b]" started-at="2019-01-01T10:01:26Z" name="validLogin" finished-at="2019-01-01T10:01:36Z" duration-ms="10900" status="PASS">
+        <test-method signature="validLogin()[pri:1, instance:com.training.sanity.tests.RETC_022_ChangeRoleTest@3098cf3b]" started-at="2019-01-03T16:04:57Z" name="validLogin" finished-at="2019-01-03T16:05:06Z" duration-ms="8807" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLogin -->
-        <test-method signature="changeUserRole()[pri:2, instance:com.training.sanity.tests.RETC_035_VerifyAddedUserTests@3098cf3b]" started-at="2019-01-01T10:01:36Z" name="changeUserRole" finished-at="2019-01-01T10:01:51Z" duration-ms="14210" status="PASS">
+        <test-method signature="changeUserRole()[pri:2, instance:com.training.sanity.tests.RETC_022_ChangeRoleTest@3098cf3b]" started-at="2019-01-03T16:05:06Z" name="changeUserRole" finished-at="2019-01-03T16:05:14Z" duration-ms="7477" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- changeUserRole -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RETC_035_VerifyAddedUserTests@3098cf3b]" started-at="2019-01-01T10:01:51Z" name="tearDown" finished-at="2019-01-01T10:01:52Z" duration-ms="1000" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RETC_022_ChangeRoleTest@3098cf3b]" started-at="2019-01-03T16:05:14Z" name="tearDown" finished-at="2019-01-03T16:05:15Z" duration-ms="922" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.sanity.tests.RETC_035_VerifyAddedUserTests -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.training.sanity.tests.RETC_022_ChangeRoleTest -->
+    </test> <!-- Sample test1 -->
+    <test started-at="2019-01-03T16:05:15Z" name="Sample test2" finished-at="2019-01-03T16:06:02Z" duration-ms="47587">
+      <class name="com.training.sanity.tests.RETC_025_PropertyFilterTests">
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.RETC_025_PropertyFilterTests@6bf0219d]" started-at="2019-01-03T16:05:15Z" name="setUpBeforeClass" finished-at="2019-01-03T16:05:40Z" duration-ms="25622" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method signature="validLoginTest()[pri:1, instance:com.training.sanity.tests.RETC_025_PropertyFilterTests@6bf0219d]" started-at="2019-01-03T16:05:40Z" name="validLoginTest" finished-at="2019-01-03T16:05:52Z" duration-ms="11676" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLoginTest -->
+        <test-method signature="changeUserRoleTest()[pri:2, instance:com.training.sanity.tests.RETC_025_PropertyFilterTests@6bf0219d]" started-at="2019-01-03T16:05:52Z" name="changeUserRoleTest" finished-at="2019-01-03T16:06:01Z" duration-ms="9217" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changeUserRoleTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RETC_025_PropertyFilterTests@6bf0219d]" started-at="2019-01-03T16:06:01Z" name="tearDown" finished-at="2019-01-03T16:06:02Z" duration-ms="1069" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.sanity.tests.RETC_025_PropertyFilterTests -->
+    </test> <!-- Sample test2 -->
+  </suite> <!-- Sample test Suite -->
 </testng-results>

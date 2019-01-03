@@ -1,5 +1,6 @@
 /*Test Case ID: RETC_023
-Test Case Name:To Verify whether application allows admin to delete user from the users list*/
+Test Case Name: To Verify whether application allows admin to delete user from the users list
+*/
 
 package com.training.sanity.tests;
 
@@ -21,7 +22,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class DeleteUserTest {
+public class RETC_023_DeleteUserTest {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -50,7 +51,6 @@ public class DeleteUserTest {
 	
 	@AfterTest
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
 		driver.quit();
 	}
 	
@@ -66,26 +66,17 @@ public class DeleteUserTest {
 	@Test(priority=2)
 	public void deleteUserTest() throws InterruptedException{
 				
-		//Click on Users Link in left menu bar
-		deleteuser.clickOnUsersLink();
-		Thread.sleep(1000);
-		//Click on all user link under Users
-		deleteuser.clickOnAllUsers();
-		//Select a check box for user to be deleted
-		deleteuser.userToBeDeleted();
-		//Click on Bulk Actions List Box
-		deleteuser.clickOnBulkAction();
-		//Select Delete in Bulk Actions list box
-		deleteuser.selectDeleteOption();
-		//Click on Apply Button
-		deleteuser.clickOnApplyBtn();
-		//Click on Confirm Deletion Button
-		deleteuser.clickOnConfirmDeleteBtn();
-		//Get the actual result
-		actualResult=deleteuser.MsgAfterUserDelete().trim();
+		
+		deleteuser.clickOnUsersLink(); //Click on Users Link in left menu bar
+		deleteuser.clickOnAllUsers();  //Click on all user link under Users
+		deleteuser.userToBeDeleted();  //Select a check box for user to be deleted
+		deleteuser.clickOnBulkAction();  //Click on Bulk Actions List Box
+		deleteuser.selectDeleteOption();  //Select Delete in Bulk Actions list box
+		deleteuser.clickOnApplyBtn();  //Click on Apply Button
+		deleteuser.clickOnConfirmDeleteBtn();  //Click on Confirm Deletion Button
+		actualResult=deleteuser.MsgAfterUserDelete().trim();  //Get the actual result
 		screenShot.captureScreenShot();
-		//Comparing actual and expected result
-		Assert.assertEquals(actualResult, expectedResult);
+		Assert.assertEquals(actualResult, expectedResult);  //Comparing actual and expected result
 		
 	}
 }

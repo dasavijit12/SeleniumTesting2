@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.RETC_047_AddNewFeatureTests">
+      <class name="com.training.sanity.tests.RETC_021_DeleteTagTests">
         <methods>
           <include name="setUpBeforeClass"/>
-          <include name="changeUserRoleTest"/>
           <include name="tearDown"/>
+          <include name="deleteTagsTest"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.RETC_047_AddNewFeatureTests -->
+      </class> <!-- com.training.sanity.tests.RETC_021_DeleteTagTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.training.sanity.tests.ConfigFile;
+import com.training.rough.tests.ConfigFile;
 
 public class BckupLoginPOM extends ConfigFile{
 	private WebDriver driver; 

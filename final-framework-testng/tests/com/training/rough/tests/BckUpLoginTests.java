@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
 import com.training.pom.LoginPOM;
-import com.training.pom.RETC_021_DeleteTagPOM;
+import com.training.pom.TagsPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 

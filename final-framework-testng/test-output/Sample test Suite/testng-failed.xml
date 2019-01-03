@@ -1,17 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Sample test Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="Sample test2(failed)">
-    <parameter name="browser" value="firefox"/>
+<suite name="Failed suite [Sample test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Sample test1(failed)">
+    <groups>
+      <run>
+        <include name="login"/>
+        <include name="propertyfilter"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.training.sanity.tests.ChangeRoleTest">
+      <class name="com.training.advance.tests.LoginTests">
         <methods>
-          <include name="tearDown"/>
-          <include name="changeUserRole"/>
           <include name="setUpBeforeClass"/>
-          <include name="validLogin"/>
+          <include name="validLoginTest"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.ChangeRoleTest -->
+      </class> <!-- com.training.advance.tests.LoginTests -->
+      <class name="com.training.advance.tests.PropertyFilterTests">
+        <methods>
+          <include name="changeUserRoleTest"/>
+          <include name="setUpBeforeClass"/>
+        </methods>
+      </class> <!-- com.training.advance.tests.PropertyFilterTests -->
+    </classes>
+  </test> <!-- Sample test1(failed) -->
+  <test thread-count="5" name="Sample test2(failed)">
+    <groups>
+      <run>
+        <include name="login"/>
+        <include name="deletetag"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.training.advance.tests.LoginTests">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="validLoginTest"/>
+        </methods>
+      </class> <!-- com.training.advance.tests.LoginTests -->
+      <class name="com.training.advance.tests.RETC_021_DeleteTagTests">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="deleteTagsTest"/>
+        </methods>
+      </class> <!-- com.training.advance.tests.RETC_021_DeleteTagTests -->
     </classes>
   </test> <!-- Sample test2(failed) -->
 </suite> <!-- Failed suite [Sample test Suite] -->

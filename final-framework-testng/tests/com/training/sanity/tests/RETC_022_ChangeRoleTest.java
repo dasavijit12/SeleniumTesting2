@@ -1,3 +1,8 @@
+/*Test Case ID : RETC_022
+Test Case Description : To Verify whether application allows admin to change 
+						the role of registered user in Users module
+*/
+
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -8,7 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
@@ -17,7 +21,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class ChangeRoleTest {
+public class RETC_022_ChangeRoleTest {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -29,15 +33,12 @@ public class ChangeRoleTest {
 	private String expectedResult = "Changed roles.";
 
 	@BeforeClass
-	@Parameters({"browser"})
-	public void setUpBeforeClass(String browser) throws IOException {
+	public void setUpBeforeClass() throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
 		
-		if(browser.equals("firefox")) {
-		driver = DriverFactory.getDriver(DriverNames.FIREFOX);
-		}
+		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver);
 		changerole = new ChangeRolePOM(driver);
 		baseUrl = properties.getProperty("baseURL");
@@ -48,7 +49,6 @@ public class ChangeRoleTest {
 	
 	@AfterTest
 	public void tearDown() throws Exception {
-		Thread.sleep(1000);
 		driver.quit();
 	}
 	
@@ -66,7 +66,6 @@ public class ChangeRoleTest {
 		
 		//Click on Users Link
 		changerole.clickOnUsersLink();
-		Thread.sleep(1000);
 		//Click on All User Link
 		changerole.clickOnAllUsers();
 		//Click on the checkbox beside the user
