@@ -1,37 +1,72 @@
 package com.training.bean;
 
 public class LoginBean {
-	private String userName;
-	private String password;
+	private String fName;
+	private String slug;
+	private String pFeature;
+	private String description;
 
 	public LoginBean() {
 	}
 
-	public LoginBean(String userName, String password) {
+	public LoginBean(String featureName, String slugName, String pFeature, String description) {
 		super();
-		this.userName = userName;
-		this.password = password;
+		this.fName = featureName;
+		this.slug = slugName;
+		this.pFeature = pFeature;
+		this.description = description;
+		
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getFeatureName() {
+		return fName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setFeatureName(String featureName) {
+		this.fName = featureName;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getSlug() {
+		return slug;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setSlug(String slugName) {
+		this.slug = slugName;
+	}
+	
+	public String getParentFeature() {
+		return pFeature;
 	}
 
-	@Override
+	public void setParentFeature(String pFeature) {
+		this.pFeature = pFeature;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	/*@Override
 	public String toString() {
-		return "LoginBean [userName=" + userName + ", password=" + password + "]";
-	}
+		return "LoginBean [featureName=" + fName + ", slug=" + slug + ", parentFeature=" + pFeature +", description=" + description + "]";
+	}*/
+	
+	
+	
+	/*@Override
+	public String toString() {
+		return "LoginBean [featureName=" + fName + ", slug=" + slug + ", parentFeature=" + pFeature +", description=" + description + "]";
+	}*/
+		
+	
+	
+	
+	
+	
+	
 
 }

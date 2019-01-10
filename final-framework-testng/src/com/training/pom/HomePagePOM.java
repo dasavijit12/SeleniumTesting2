@@ -9,12 +9,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.trianing.waits.WaitTypes;
+
 public class HomePagePOM {
 	private WebDriver driver; 
+	private WaitTypes wt;
 	
 	public HomePagePOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
+		wt = new WaitTypes(driver);
 	}
 	
 	//Finding the Real Estate Link
@@ -37,15 +41,17 @@ public class HomePagePOM {
 	
 	//Click on Real Estate Link
 	public void clickOnRealEstateLink() {
-		this.realEstateLink.click();
+		wt.elementToBeClickable1(this.realEstateLink, 5).click();
+		//this.realEstateLink.click();
 	}
 	
 	//Enter Search text
 	public void enterSearchItem(String srchItem) {
+		WebElement srchBoxAfterWait = wt.presenceElementLocated1(this.searchBox, 5);
 		JavascriptExecutor je = (JavascriptExecutor) driver;
 		je.executeScript("window.scrollBy(0,1500)");
 		//je.executeScript("arguments[0].scrollIntoView(true);",searchBox);
-		this.searchBox.sendKeys(srchItem);
+		srchBoxAfterWait.sendKeys(srchItem);
 	}
 	
 	//Verify whether search result is getting displayed
@@ -54,7 +60,7 @@ public class HomePagePOM {
 		boolean flag = false;
 		for(WebElement myResult : results) {
 			String resultText = myResult.getText().trim();
-			//System.out.println(myResult.getText());
+			System.out.println(resultText);
 			if(searchText.equals(resultText)) {
 				System.out.println("This is what I was looking for..." + resultText);
 				flag = true;

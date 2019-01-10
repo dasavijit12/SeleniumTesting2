@@ -27,6 +27,10 @@ private WebDriver driver;
 	@FindBy(xpath="//a[@class='wp-first-item current']")
 	private WebElement allPropertiesLink;
 	
+	//Finding the Regions Link
+	@FindBy(xpath="//a[contains(text(),'Regions')]")
+	private WebElement regionsLink;
+	
 	//Finding the All Dates List Box
 	@FindBy(id="filter-by-date")
 	private WebElement allDatesListBox;
@@ -61,6 +65,11 @@ private WebDriver driver;
 	//Click on All Properties Link
 	public void clickOnAllPropertiesLink() {
 		this.allPropertiesLink.click(); 
+	}
+	
+	//Click on Regions Link
+	public void clickOnAllRegionsLink() {
+		this.regionsLink.click(); 
 	}
 	
 	//Click on All Dates list box

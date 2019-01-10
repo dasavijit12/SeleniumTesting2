@@ -126,6 +126,20 @@ public class WaitTypes {
 	}
 	
 	
+	public Boolean presenceElementLocated2(WebElement element, int timeout){
+		try{
+			WebDriverWait wait = new WebDriverWait(driver, timeout);
+			WebElement element1  = wait.until(
+					ExpectedConditions.visibilityOf(element));
+			System.out.println("Element Located");
+			return true;
+		}catch(Exception e ){
+			System.out.println("Element Not Located " + e);
+		}
+		return false;
+	}
+	
+	
 	/*public WebElement presenceOfAlert(int timeout){
 		try{
 			WebDriverWait wait = new WebDriverWait(driver, timeout);

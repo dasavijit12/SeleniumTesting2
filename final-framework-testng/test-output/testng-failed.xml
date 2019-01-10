@@ -1,48 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Sample test Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Sample test1(failed)">
-    <groups>
-      <run>
-        <include name="login"/>
-        <include name="propertyfilter"/>
-      </run>
-    </groups>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.advance.tests.LoginTests">
+      <class name="com.training.complex.tests.RETC_084_CreatInvalidUserTests">
         <methods>
-          <include name="setUpBeforeClass"/>
-          <include name="validLoginTest"/>
-        </methods>
-      </class> <!-- com.training.advance.tests.LoginTests -->
-      <class name="com.training.advance.tests.PropertyFilterTests">
-        <methods>
-          <include name="changeUserRoleTest"/>
+          <include name="tearDown"/>
+          <include name="createInvalidUserTest" invocation-numbers="1"/>
           <include name="setUpBeforeClass"/>
         </methods>
-      </class> <!-- com.training.advance.tests.PropertyFilterTests -->
+      </class> <!-- com.training.complex.tests.RETC_084_CreatInvalidUserTests -->
     </classes>
-  </test> <!-- Sample test1(failed) -->
-  <test thread-count="5" name="Sample test2(failed)">
-    <groups>
-      <run>
-        <include name="login"/>
-        <include name="deletetag"/>
-      </run>
-    </groups>
-    <classes>
-      <class name="com.training.advance.tests.LoginTests">
-        <methods>
-          <include name="setUpBeforeClass"/>
-          <include name="validLoginTest"/>
-        </methods>
-      </class> <!-- com.training.advance.tests.LoginTests -->
-      <class name="com.training.advance.tests.RETC_021_DeleteTagTests">
-        <methods>
-          <include name="setUpBeforeClass"/>
-          <include name="deleteTagsTest"/>
-        </methods>
-      </class> <!-- com.training.advance.tests.RETC_021_DeleteTagTests -->
-    </classes>
-  </test> <!-- Sample test2(failed) -->
-</suite> <!-- Failed suite [Sample test Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

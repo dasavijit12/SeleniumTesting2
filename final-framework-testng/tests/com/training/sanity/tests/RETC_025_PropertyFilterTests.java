@@ -19,6 +19,7 @@ import com.training.pom.LoginPOM;
 import com.training.pom.PropertiesPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
+import com.training.utility.TestUtil;
 
 public class RETC_025_PropertyFilterTests {
 	
@@ -54,15 +55,16 @@ public class RETC_025_PropertyFilterTests {
 		driver.quit();
 	}
 	
-	@Test(priority=1)
-	public void validLoginTest() throws InterruptedException{
-		loginPOM.sendUserName("admin");
-		loginPOM.sendPassword("admin@123");
+	@Test(dataProviderClass=TestUtil.class,dataProvider="dp")
+	public void validLoginTest(String userName, String password) throws InterruptedException{
+		loginPOM.sendUserName(userName);
+		loginPOM.sendPassword(password);
 		loginPOM.clickLoginBtn(); 
+		loginPOM.clickOnLogOutLink();
 		screenShot.captureScreenShot();
 	}
 	
-	@Test(priority=2)
+	/*@Test(priority=2)
 	public void changeUserRoleTest() throws InterruptedException{
 		
 		//Click on properties link		
@@ -82,5 +84,5 @@ public class RETC_025_PropertyFilterTests {
 		//System.out.println(actualResult);
 		Assert.assertEquals(actualResult, expectedResult);
 		screenShot.captureScreenShot();
-	}
+	}*/
 }

@@ -73,7 +73,7 @@ public class BlogPOM {
 	//Click on the down arrow that is in ::after pseudo element
 	public void clickOnDownArrow() {
 		Actions action = new Actions(driver);
-		action.moveToElement(this.downArrow).moveByOffset(124, 0).click().build().perform();
+		action.moveToElement(this.downArrow).moveByOffset(50, 0).click().build().perform();
 	}
 		
 	//Click on the Log Out Link

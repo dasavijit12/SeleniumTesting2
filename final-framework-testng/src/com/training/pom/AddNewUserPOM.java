@@ -116,10 +116,19 @@ private WaitTypes wt;
 		this.roleListBox.click(); 
 	}
 	
+	//Click on Role List Box on condition
+	public void clickOnRoleListBoxOnCondition(String role) {
+		if(!role.isEmpty()) {
+		this.roleListBox.click(); 
+		}
+	}
+	
 	//Select Valid credentials in Role list box
 	public void selectRole(String role) {
+		if(role!=null) {
 		Select roles = new Select(this.roleListBox);
 		roles.selectByVisibleText(role);
+		}
 	}
 	
 	//Click on Add New User Button
@@ -131,5 +140,11 @@ private WaitTypes wt;
 	public String confirmationMsg() {
 		return this.msgAfterCreatingUser.getText();
 	}
+	
+	//Checking whether the user is created with invalid input
+	public String invalidUserMsg() {
+		return this.msgAfterCreatingUser.getText();
+	}
+	
 	
 }

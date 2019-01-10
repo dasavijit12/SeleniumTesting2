@@ -144,6 +144,12 @@ private WaitTypes wt;
 		return this.publishMesaage.getText();
 	}
 	
+	//Verify whether the Publish message displayed
+	public boolean isMsgPublished() {
+		return wt.presenceElementLocated2(this.publishMesaage, 5);
+		//return this.publishMesaage.getText();
+	}
+	
 	//Click on Move to Trash Link
 	public void clickOnMoveToTrashLink() {
 		wt.elementToBeClickable1(this.moveToTrashLink, 20).click();
